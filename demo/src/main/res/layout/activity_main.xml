@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aebec5"
+    tools:context=".MainActivity"
+    >
+
+    <com.fenjuly.mylibrary.ToggleExpandLayout
+        android:id="@+id/toogleLayout"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/id2"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:background="#ffffff"
+            android:elevation="2dp"
+            android:outlineProvider="bounds"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/first_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Set date"
+                    />
+                <TextView
+                    android:layout_below="@+id/first_menu"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="23 August 2015"
+                    android:textColor="#cccccc"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id3"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:background="#ffffff"
+            android:elevation="3dp"
+            android:outlineProvider="bounds"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/second_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Set time"
+                    />
+                <TextView
+                    android:layout_below="@+id/second_menu"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15:47"
+                    android:textColor="#cccccc"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id4"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:background="#ffffff"
+            android:elevation="4dp"
+            android:outlineProvider="bounds"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:text="Automatic date and time"
+                    />
+                <TextView
+                    android:layout_below="@+id/menu"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Use network provide time"
+                    android:textColor="#cccccc"/>
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/switch_button"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    style="@style/MD" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </com.fenjuly.mylibrary.ToggleExpandLayout>
+    </RelativeLayout>

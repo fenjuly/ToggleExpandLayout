@@ -117,6 +117,5 @@
                     style="@style/MD" />
             </RelativeLayout>
         </LinearLayout>
-
     </com.fenjuly.mylibrary.ToggleExpandLayout>
     </RelativeLayout>

@@ -1,6 +1,11 @@
 # ToggleExpandLayout
 A togglelayout that can be used in setting interface.
 Originally designed by [dribbble](https://dribbble.com/shots/2211566-Android-Toggle-Behaviour).
+And the author said that's why he designed this:
+>I never liked how some settings are disabled by default and not tappable until another settings has been turned on/off.
+
+>My concept is to hide these disabled settings behind their "master toggle" and then have them transition out as they become active - making the list cleaner, with less clutter and ultimately easier to use.
+
 
 ###Preview
 ![toggleexpandlayout](http://i.imgur.com/aYZByoU.gif)

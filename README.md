@@ -75,4 +75,5 @@ layout.setOnToggleTouchListener(new ToggleExpandLayout.OnToggleTouchListener() {
   ```
   
   ###License
+  
   [MIT](https://github.com/fenjuly/ToggleExpandLayout/raw/master/LICENSE)

@@ -43,6 +43,8 @@ And the author said that's why he designed this:
 ```
 
 * **JAVA**
+two method `public void open()` and `public void close()`
+
 ```java
 layout.setOnToggleTouchListener(new ToggleExpandLayout.OnToggleTouchListener() {
             @Override

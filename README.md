@@ -6,7 +6,7 @@ Originally designed by [dribbble](https://dribbble.com/shots/2211566-Android-Tog
 ![toggleexpandlayout](http://i.imgur.com/aYZByoU.gif)
 
 ###Usage
-
+* **XML**
 ```xml
  <com.fenjuly.mylibrary.ToggleExpandLayout
         android:id="@+id/toogleLayout"
@@ -37,7 +37,7 @@ Originally designed by [dribbble](https://dribbble.com/shots/2211566-Android-Tog
     </com.fenjuly.mylibrary.ToggleExpandLayout>
 ```
 
-
+* **JAVA**
 ```java
 layout.setOnToggleTouchListener(new ToggleExpandLayout.OnToggleTouchListener() {
             @Override

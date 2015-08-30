@@ -51,25 +51,14 @@ layout.setOnToggleTouchListener(new ToggleExpandLayout.OnToggleTouchListener() {
 
             @Override
             public void onOpen() {
-               int childCount = layout.getChildCount();
-               for(int i = 0; i < childCount; i++) {
-                   View view = layout.getChildAt(i);
-                   view.setElevation(dp2px(1));
-               }
             }
 
             @Override
             public void onStartClose() {
-                int childCount = layout.getChildCount();
-                for(int i = 0; i < childCount; i++) {
-                    View view = layout.getChildAt(i);
-                    view.setElevation(dp2px(i));
-                }
             }
 
             @Override
             public void onClosed() {
-
             }
         });
   ```

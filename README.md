@@ -1,4 +1,6 @@
 # ToggleExpandLayout
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ToggleExpandLayout-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2412)
+
 A togglelayout that can be used in setting interface.
 Originally designed by [dribbble](https://dribbble.com/shots/2211566-Android-Toggle-Behaviour).
 And the author said that's why he designed this:

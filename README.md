@@ -65,6 +65,19 @@ layout.setOnToggleTouchListener(new ToggleExpandLayout.OnToggleTouchListener() {
             }
         });
   ```
+
+###Get into your build
+```gradle
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    compile 'com.github.fenjuly:ToggleExpandLayout:774e497692'
+}
+```
   
 ###License
   

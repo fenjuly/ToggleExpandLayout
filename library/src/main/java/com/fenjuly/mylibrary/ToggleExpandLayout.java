@@ -2,6 +2,7 @@ package com.fenjuly.mylibrary;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -18,6 +19,8 @@ public class ToggleExpandLayout extends FrameLayout {
     private boolean isOpen = false;
     private int mPosY;
     private int mTop;
+    private int expandHeight;
+    private int originalHeight;
 
     private ArrayList<OnToggleTouchListener> listeners = new ArrayList<>();
 
@@ -38,15 +41,18 @@ public class ToggleExpandLayout extends FrameLayout {
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         mPosY = 0;
         mTop = 0;
-        int curY = top;
-        View rootChild = getChildAt(getChildCount() -1);
-        int rootHeight = rootChild.getMeasuredHeight();
-        for (int i = 0; i < getChildCount(); i++) {
+        expandHeight = 0;
+        int childCount = getChildCount();
+        int curY = 0;
+        for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
             int width = child.getMeasuredWidth();
             int height = child.getMeasuredHeight();
-            float ratio = (float)height / rootHeight;
-            child.setTag(ratio);
+            if (i != childCount - 1) {
+                expandHeight = expandHeight + height;
+            } else {
+                originalHeight = height;
+            }
             child.layout(left, curY, left + width, curY + height);
         }
         for (int i = 0; i < getChildCount() - 1; i++) {
@@ -64,16 +70,16 @@ public class ToggleExpandLayout extends FrameLayout {
             }
             mPosY = 0;
             for (OnToggleTouchListener l : listeners) {
-                l.onStartOpen();
+                l.onStartOpen(expandHeight, originalHeight);
             }
             int childCount = getChildCount();
             for (int i = childCount - 2; i > -1; i--) {
                 View child = getChildAt(i);
                 View preChild = getChildAt(i + 1);
                 int preHeight = preChild.getMeasuredHeight();
-                float ratio = (float)child.getTag();
                 OpenViewAnimator animator = new OpenViewAnimator(mTop, mPosY + preHeight, i);
                 animator.animate(child);
+                Log.e("animate open", "invoked");
                 if (i == 0) {
                     animator.addAnimatorListener(new Animator.AnimatorListener() {
                         @Override
@@ -108,7 +114,7 @@ public class ToggleExpandLayout extends FrameLayout {
         if (isOpen) {
             isOpen = false;
             for (OnToggleTouchListener l : listeners) {
-                l.onStartClose();
+                l.onStartClose(expandHeight, originalHeight);
             }
             int childCount = getChildCount();
             for (int i = 0; i < childCount - 1; i++) {
@@ -116,6 +122,7 @@ public class ToggleExpandLayout extends FrameLayout {
                 View preChild = getChildAt(i + 1);
                 CloseViewAnimator animator = new CloseViewAnimator(mPosY, mTop, i);
                 animator.animate(child);
+                Log.e("animate open", "invoked");
                 if (i == 0) {
                     animator.addAnimatorListener(new Animator.AnimatorListener() {
                         @Override
@@ -153,6 +160,17 @@ public class ToggleExpandLayout extends FrameLayout {
 
     public void setOnToggleTouchListener(OnToggleTouchListener listener) {
         listeners.add(listener);
+    }
+
+    public void removeOnToggleTouchListener(int position) {
+        if (position < 0 || position > listeners.size() - 1) return;
+        else {
+            listeners.remove(position);
+        }
+    }
+
+    public void removeAllOntoggleTouchListener() {
+        listeners.clear();
     }
 
     private class OpenViewAnimator extends BaseAnimator {
@@ -196,9 +214,9 @@ public class ToggleExpandLayout extends FrameLayout {
     }
 
     public interface OnToggleTouchListener {
-        public void onStartOpen();
+        public void onStartOpen(int height, int originalHeight);
         public void onOpen();
-        public void onStartClose();
+        public void onStartClose(int height, int originalHeight);
         public void onClosed();
     }
 

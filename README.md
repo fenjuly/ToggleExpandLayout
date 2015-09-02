@@ -10,7 +10,7 @@ And the author said that's why he designed this:
 
 
 ###Preview
-![toggleexpandlayout](http://i.imgur.com/aYZByoU.gif)
+![toggleexpandlayout](http://i.imgur.com/xEy5sr9.gif)
 
 ###Usage
 * **XML**

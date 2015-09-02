@@ -14,6 +14,8 @@ And the author said that's why he designed this:
 
 ###Usage
 * **XML**
+if yout just use one togglelayout:
+
 ```xml
  <com.fenjuly.mylibrary.ToggleExpandLayout
         android:id="@+id/toogleLayout"
@@ -43,6 +45,39 @@ And the author said that's why he designed this:
         </View>
     </com.fenjuly.mylibrary.ToggleExpandLayout>
 ```
+
+if yout want use more than one togglelayout with drop and rise animation, use DropDownLayout:
+
+```xml
+ <com.fenjuly.mylibrary.DropDownLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        >
+
+    <com.fenjuly.mylibrary.ToggleExpandLayout
+        android:id="@+id/toogleLayout"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        ...
+    </com.fenjuly.mylibrary.ToggleExpandLayout>
+    
+    <com.fenjuly.mylibrary.ToggleExpandLayout
+        android:id="@+id/toogleLayout"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        ...
+    </com.fenjuly.mylibrary.ToggleExpandLayout>
+    </com.fenjuly.mylibrary.DropDownLayout>
+```
+
 
 * **JAVA**
 

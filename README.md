@@ -47,7 +47,7 @@ if yout just use one togglelayout:
     </com.fenjuly.mylibrary.ToggleExpandLayout>
 ```
 
-if yout want use more than one togglelayouts with drop and rise animation, use DropDownLayout:
+if yout want to use more than one togglelayouts with drop and rise animation, use DropDownLayout:
 
 ```xml
  <com.fenjuly.mylibrary.DropDownLayout

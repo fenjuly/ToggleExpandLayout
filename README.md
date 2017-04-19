@@ -9,10 +9,10 @@ And the author said that's why he designed this:
 >My concept is to hide these disabled settings behind their "master toggle" and then have them transition out as they become active - making the list cleaner, with less clutter and ultimately easier to use.
 
 
-###Preview
+### Preview
 ![toggleexpandlayout](http://i.imgur.com/xEy5sr9.gif)
 
-###Usage
+### Usage
 * **XML**
  
 if yout just use one togglelayout:
